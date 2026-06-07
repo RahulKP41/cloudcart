@@ -1,0 +1,63 @@
+cloudcart/
+│
+├── user-service/
+│   ├── src/
+│   │   ├── routes/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   └── app.js
+│   ├── Dockerfile
+│   ├── package.json
+│   └── .env
+│
+├── product-service/
+│   ├── src/
+│   │   ├── routes/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   └── app.js
+│   ├── Dockerfile
+│   ├── package.json
+│   └── .env
+│
+├── order-service/
+│   ├── src/
+│   │   ├── routes/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   └── app.js
+│   ├── Dockerfile
+│   ├── package.json
+│   └── .env
+│
+├── k8s/
+│   ├── user/
+│   │   ├── deployment.yaml
+│   │   └── service.yaml
+│   │
+│   ├── product/
+│   │   ├── deployment.yaml
+│   │   └── service.yaml
+│   │
+│   ├── order/
+│   │   ├── deployment.yaml
+│   │   └── service.yaml
+│   │
+│   └── ingress/
+│       └── ingress.yaml
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
+│
+├── monitoring/
+│   ├── prometheus/
+│   └── grafana/
+│
+├── docs/
+│   ├── architecture.md
+│   ├── deployment.md
+│   └── troubleshooting.md
+│
+├── docker-compose.yml
+└── README.md
