@@ -69,33 +69,33 @@ jobs:
           docker push \
           ${{ secrets.DOCKER_USERNAME }}/cloudcart-order-service:latest
 
-  deploy:
+  # deploy:
 
-    needs: build-and-push
+  #   needs: build-and-push
 
-    runs-on: ubuntu-latest
+  #   runs-on: ubuntu-latest
 
-    steps:
+  #   steps:
 
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v4
 
-      - name: Configure kubectl
-        run: |
-          docker build -t user-serivce ./user-service
+  #     - name: Configure kubectl
+  #       run: |
+  #         docker build -t user-serivce ./user-service
 
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -R -f k8s/
+  #     - name: Deploy to Kubernetes
+  #       run: |
+  #         kubectl apply -R -f k8s/
 
-      - name: Restart Deployments
-        run: |
-          kubectl rollout restart deployment user-deployment
-          kubectl rollout restart deployment product-deployment
-          kubectl rollout restart deployment order-deployment
+  #     - name: Restart Deployments
+  #       run: |
+  #         kubectl rollout restart deployment user-deployment
+  #         kubectl rollout restart deployment product-deployment
+  #         kubectl rollout restart deployment order-deployment
 
-      - name: Verify Rollout
-        run: |
-          kubectl rollout status deployment/user-deployment
-          kubectl rollout status deployment/product-deployment
-          kubectl rollout status deployment/order-deployment
+  #     - name: Verify Rollout
+  #       run: |
+  #         kubectl rollout status deployment/user-deployment
+  #         kubectl rollout status deployment/product-deployment
+  #         kubectl rollout status deployment/order-deployment
