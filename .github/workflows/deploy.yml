@@ -13,8 +13,6 @@ jobs:
   build-and-push:
 
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
       - name: Checkout Code
